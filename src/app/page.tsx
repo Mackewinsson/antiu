@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "../../ src/components/button";
+import { Button } from "../components/button/button";
 
 export function ButtonDemo() {
-  return <Button>Button</Button>;
+  return <Button>Perro</Button>;
 }
 
 export default function Home() {
