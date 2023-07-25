@@ -1,12 +1,16 @@
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import React from 'react';
 
-const Button = () => {
+const Button = ({ type, className, id, onClick, children }) => {
   return (
-    <Button asChild>
-      <Link href='/'>Button</Link>
-    </Button>
+    <ButtonComponent
+      type={type ? type : 'button'}
+      className={className ? `btn-component ${className}` : 'btn-component'}
+      id={id}
+      onClick={onClick}
+    >
+      {children}
+    </ButtonComponent>
   );
 };
 
-export { Button };
+export default Button;
