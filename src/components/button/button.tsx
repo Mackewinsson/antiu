@@ -3,17 +3,19 @@ import React from 'react';
 import { Button as ButtonComponent } from 'react-bootstrap';
 
 type Props = {
-  type: 'button' | 'submit';
+  children?: React.ReactNode;
+  type?: 'button' | 'submit';
   variant: string;
   className?: string;
-  text: string;
-  onClick: () => void;
+  text?: string;
+  onClick?: () => void;
   size?: 'sm' | 'lg';
   active?: boolean;
   disabled?: boolean;
 };
 
 export const Button = ({
+  children,
   type,
   variant,
   className,
@@ -33,7 +35,7 @@ export const Button = ({
       active={active}
       disabled={disabled}
     >
-      {text}
+      {children || text}
     </ButtonComponent>
   );
 };
