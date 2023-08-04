@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@/components/button/button';
 import React from 'react';
 import { Card } from '@/components/card/card';
@@ -17,7 +18,7 @@ export default function Home() {
         variant='secondary'
         className='btn-component mb-5'
         text='prueba'
-        // onClick={handleClick}
+        onClick={handleClick}
         size='lg'
         active
       />
