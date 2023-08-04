@@ -3,8 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import styled from "styled-components";
+import { Container, Navbar, Nav } from "react-bootstrap";
 
 const pages = ["Carreras"];
 
