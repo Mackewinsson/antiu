@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import { NavComponent } from "@/components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
-import StyledComponentsRegistry from "./lib/registry";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +21,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <NavComponent />
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          {children}
         </body>
       </html>
     </ClerkProvider>
