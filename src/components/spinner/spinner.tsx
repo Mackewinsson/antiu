@@ -1,21 +1,21 @@
-'use client';
-import React from 'react';
-import { Spinner as SpinnerComponent } from 'react-bootstrap';
+"use client";
+import React from "react";
+import { Spinner as SpinnerComponent } from "react-bootstrap";
 
 type Props = {
-  animation: 'border' | 'grow';
+  animation: "border" | "grow";
   variant?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'info'
-    | 'light'
-    | 'dark';
+    | "primary"
+    | "secondary"
+    | "success"
+    | "danger"
+    | "warning"
+    | "info"
+    | "light"
+    | "dark";
   role?: string;
   className?: string;
-  size?: 'sm';
+  size?: "sm";
   as?: React.ElementType;
   text?: string;
 };

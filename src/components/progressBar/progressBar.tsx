@@ -1,9 +1,9 @@
-'use client';
-import React from 'react';
-import { ProgressBar as ProgressBarComponent } from 'react-bootstrap';
+"use client";
+import React from "react";
+import { ProgressBar as ProgressBarComponent } from "react-bootstrap";
 
 type Props = {
-  variant?: 'success' | 'danger' | 'warning' | 'info';
+  variant?: "success" | "danger" | "warning" | "info";
   key?: number;
   min?: number;
   now?: number;
