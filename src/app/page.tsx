@@ -1,27 +1,32 @@
 "use client";
 import { useAuthService } from "@/services/authService";
-import { useAuth, useUser } from "@clerk/nextjs";
-import React from "react";
+import { useUser } from "@clerk/nextjs";
+import React, { useEffect, useState } from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
+import { type } from "os";
 
 export default function Home() {
-  const { verify, firebaseLogin } = useAuthService();
+  const { firebaseLogin } = useAuthService();
+  const user = useUser();
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    (localStorage.getItem("isLoggedIn") === "true" ? true : false) || false
+  );
+
   const handleLoginApi = async () => {
-    const data = await firebaseLogin();
+    const data = await firebaseLogin(user);
+    setIsLoggedIn(true);
+    localStorage.setItem("isLoggedIn", "true");
   };
 
-  const handleVerifyApi = async () => {
-    const data = await verify();
-  };
-
-  // React.useEffect(() => {
-  //   handleLoginApi();
-  // });
+  useEffect(() => {
+    if (isLoggedIn) return;
+    handleLoginApi();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
       <div>Home</div>
-      <button onClick={handleLoginApi}>Login</button>
-      <button onClick={handleVerifyApi}>verify</button>
     </>
   );
 }
