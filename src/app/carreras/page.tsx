@@ -1,10 +1,10 @@
 "use client";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/button";
 import React from "react";
-import { Card } from "@/components/card/card";
+import { Card } from "@/components/card";
 import { Badge } from "@/components/badges/badges";
 
-export default function Home() {
+export default function Carreras() {
   const handleClick = () => {
     alert("Clicked");
   };

@@ -2,14 +2,13 @@
 import { useAuthService } from "@/services/authService";
 import { useUser } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
-import useLocalStorage from "./hooks/useLocalStorage";
-import { type } from "os";
 
 export default function Home() {
   const { firebaseLogin } = useAuthService();
   const user = useUser();
   const [isLoggedIn, setIsLoggedIn] = useState(
-    (localStorage.getItem("isLoggedIn") === "true" ? true : false) || false
+    (window.localStorage.getItem("isLoggedIn") === "true" ? true : false) ||
+      false
   );
 
   const handleLoginApi = async () => {
@@ -26,7 +25,7 @@ export default function Home() {
 
   return (
     <>
-      <div>Home</div>
+      <div>Home page</div>
     </>
   );
 }

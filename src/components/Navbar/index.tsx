@@ -5,7 +5,7 @@ import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { Container, Navbar, Nav } from "react-bootstrap";
 
-const pages = ["Carreras"];
+const pages = ["carreras", "clases"];
 
 export const NavComponent = () => {
   return (
@@ -14,12 +14,12 @@ export const NavComponent = () => {
         <Navbar.Brand>
           <Link href={"/"}>antiU</Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />z
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {pages.map((page) => (
               <Nav.Link key={page}>
-                <Link href={"/carreras"}>Carreras</Link>
+                <Link href={page}>{page}</Link>
               </Nav.Link>
             ))}
           </Nav>
