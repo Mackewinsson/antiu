@@ -2,40 +2,41 @@
 import { Button } from "@/components/button";
 import React from "react";
 import { Card } from "@/components/card";
-import { Badge } from "@/components/badges/badges";
+
+import { useRouter } from "next/navigation";
+import { Container } from "react-bootstrap";
+import { Wrapper } from "./styles/styles";
 
 export default function Carreras() {
-  const handleClick = () => {
-    alert("Clicked");
-  };
+  const router = useRouter();
+
+  const carreras = [
+    {
+      id: "front-end-dev",
+      title: "Front end dev",
+      description: "Frontend Carrer description lorem",
+    },
+  ];
 
   return (
-    <>
-      <div className="mb-5">Carreras</div>
-
-      <Button
-        type="button"
-        variant="secondary"
-        className="btn-component mb-5"
-        text="prueba"
-        onClick={handleClick}
-        size="lg"
-        active
-      />
-
-      <Card
-        className="mb-5"
-        title="Título de la Tarjeta"
-        subtitle="Subtítulo de la Tarjeta"
-        content={<p>Contenido de la tarjeta.</p>}
-      />
-
-      <div>
-        <h1>Componente de Badge Reutilizable</h1>
-        <Badge variant="primary" text="Nuevo" />
-        <Badge variant="success" text="Completado" />
-        <Badge variant="danger" text="Importante" />
-      </div>
-    </>
+    <Container>
+      <Wrapper>
+        {carreras.map((carrera) => (
+          <Card
+            key={carrera.id}
+            title={carrera.title}
+            text={carrera.description}
+            button={
+              <Button
+                onClick={() => router.push("/carreras/front-end-dev")}
+                text="Ir a la carrera"
+                variant="primary"
+                type="button"
+              />
+            }
+          />
+        ))}
+      </Wrapper>
+    </Container>
   );
 }
